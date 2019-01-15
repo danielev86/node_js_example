@@ -1,7 +1,7 @@
 const fs = require("fs");
 const line_feed = "\n"
 
-var jsonToCsv = function(list, splitItam, fileName){
+var jsonToCsv = function(list, elementSeparator, fileName){
 	var listElement = [];
 	for (i in list){
 		var line = "";
@@ -11,7 +11,7 @@ var jsonToCsv = function(list, splitItam, fileName){
 			if (index == numElementData){
 				line += list[i][j];
 			}else{
-				line += list[i][j] + ",";
+				line += list[i][j] + elementSeparator;
 			}
 			index++;
 		}
